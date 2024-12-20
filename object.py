@@ -227,6 +227,37 @@ objects = {
             {"ind0":1, "ind1":0, "ind2":2, "color":(0, 169, 0), "face_angle_h":0, "face_angle_v":0},
             {"ind0":1, "ind1":3, "ind2":2, "color":(0, 189, 0), "face_angle_h":0, "face_angle_v":0},
         ]
+    },
+
+    "player":{
+        "points":[
+            {"x":0, "y":0, "z":0},
+            {"x":0, "y":0, "z":100},
+            {"x":100, "y":0, "z":0},
+            {"x":100, "y":0, "z":100},
+
+            {"x":0, "y":250, "z":0},
+            {"x":0, "y":250, "z":100},
+            {"x":100, "y":250, "z":0},
+            {"x":100, "y":250, "z":100},
+        ],
+        "faces":[
+            {"ind0":0, "ind1":4, "ind2":6, "color":(139, 69, 19), "face_angle_h":0, "face_angle_v":0},
+            {"ind0":0, "ind1":2, "ind2":6, "color":(159, 89, 39), "face_angle_h":0, "face_angle_v":0},
+
+            {"ind0":3, "ind1":6, "ind2":7, "color":(159, 89, 39), "face_angle_h":0, "face_angle_v":0},
+            {"ind0":2, "ind1":3, "ind2":6, "color":(139, 69, 19), "face_angle_h":0, "face_angle_v":0},
+
+            {"ind0":1, "ind1":0, "ind2":4, "color":(159, 89, 39), "face_angle_h":0, "face_angle_v":0},
+            {"ind0":1, "ind1":5, "ind2":4, "color":(139, 69, 19), "face_angle_h":0, "face_angle_v":0},
+
+            {"ind0":1, "ind1":5, "ind2":7, "color":(159, 89, 39), "face_angle_h":0, "face_angle_v":0},
+            {"ind0":1, "ind1":3, "ind2":7, "color":(139, 69, 19), "face_angle_h":0, "face_angle_v":0},
+
+            {"ind0":5, "ind1":4, "ind2":6, "color":(159, 89, 39), "face_angle_h":0, "face_angle_v":0},
+            {"ind0":5, "ind1":7, "ind2":6, "color":(139, 69, 19), "face_angle_h":0, "face_angle_v":0},
+
+        ]
     }
     
 }

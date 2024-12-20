@@ -8,7 +8,7 @@ from client import client
 
 pg.init()
 
-# client.plr_name = input("your name: ")
+client.plr_name = input("your name: ")
 
 class Game:
     def __init__(self) -> None:
@@ -25,7 +25,7 @@ class Game:
 
         # todo start functions
         self.world.generate_word()
-        # client.send_plr_join()
+        client.send_plr_join()
         pg.mouse.set_visible(False)
 
 
@@ -36,13 +36,13 @@ class Game:
         self.world.faces, self.world.points = self.camera.camera_view(self.world.objects, self.screen_w, self.screen_h)
         self.camera.controls(self.screen_w, self.screen_h, self.world.objects, self.delta_time)
         self.camera.collisions(self.world.objects, self.delta_time)
-        # try:
-        #     if self.post_cd >= 2:
-        #         client.send_pos(self.camera.x, self.camera.y, self.camera.z)
-        #         self.post_cd = 0
-        #     self.post_cd += 1 / self.delta_time
-        # except Exception:
-        #     pass
+        try:
+            if self.post_cd >= 2:
+                client.send_pos(self.camera.x, self.camera.y, self.camera.z)
+                self.post_cd = 0
+            self.post_cd += 1 / self.delta_time
+        except Exception:
+            pass
 
     def draw(self):
         self.world.draw(self.screen, self.camera, self.screen_w, self.screen_h)

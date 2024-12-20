@@ -2,13 +2,14 @@ import math
 from object import Object
 import pygame as pg
 from numba import njit
-
+import pygame.gfxdraw as gfxdraw
 PI = 3.141592
 
 
 class World:
     def __init__(self) -> None:
         self.objects = []
+
         self.points = []
         self.faces = []
 
@@ -239,21 +240,18 @@ class World:
 
 
             if face_visible:
-                    if (d_point0[0] < sc_w or d_point1[0] < sc_w or d_point2[0] < sc_w) and (d_point0[0] > 0 or d_point1[0] > 0 or d_point2[0] > 0):
-                        if (d_point0[1] < sc_h or d_point1[1] < sc_h or d_point2[1]< sc_h)  and (d_point0[1] > 0 or d_point1[1] > 0 or d_point2[1] > 0):
-                            try:
-                            
-                                pg.draw.polygon(screen, face['color'], (
-                                    d_point0, d_point1, d_point2
-                                ))
-                            except Exception:
-                                pass
-                    #     print(d_point0, d_point1, d_point2)
+                if (d_point0[0] < sc_w or d_point1[0] < sc_w or d_point2[0] < sc_w) and (d_point0[0] > 0 or d_point1[0] > 0 or d_point2[0] > 0):
+                    if (d_point0[1] < sc_h or d_point1[1] < sc_h or d_point2[1]< sc_h)  and (d_point0[1] > 0 or d_point1[1] > 0 or d_point2[1] > 0):
+                        try:
+                            pg.draw.polygon(screen, face['color'], (
+                                d_point0, d_point1, d_point2
+                            ))
+                        except Exception:
+                            pass
+
 
         # for point in self.points:
-
         #     pg.draw.rect(screen, "red", (point["d_x"], point['d_y'], 5, 5))
-
         #     text = self.font.render(str(point["ind"]), True, "green")
         #     screen.blit(text, (point['d_x']+10, point['d_y'], 5, 5))
 
