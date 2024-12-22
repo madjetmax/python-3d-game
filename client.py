@@ -1,10 +1,9 @@
 import socket
 import json
+from confin import *
 
 
 
-HOST = "192.168.88.213"
-PORT = 65432  
 
 class Client():
     def __init__(self):

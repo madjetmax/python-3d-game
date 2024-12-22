@@ -1,9 +1,8 @@
 import socket
 import json
 from copy import deepcopy
+from confin import *
 
-HOST = "192.168.88.217"
-PORT = 65432  
 
 
 class Server():
