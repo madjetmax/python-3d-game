@@ -2,7 +2,7 @@ import socket
 import json
 from copy import deepcopy
 
-HOST = "127.0.0.1"
+HOST = "192.168.88.217"
 PORT = 65432  
 
 
@@ -36,6 +36,15 @@ class Server():
                         new_plr
                     )
                     conn.send(json.dumps(new_plr).encode())
+                
+                print(self.players)
+            
+            if data.startswith("plr_leave_"):
+                plr_name = data.replace("plr_leave_", "")
+                
+                for plr in self.players:
+                    if plr["name"] == plr_name:
+                        self.players.remove(plr)
                 
                 print(self.players)
 

@@ -3,7 +3,7 @@ import json
 
 
 
-HOST = "127.0.0.1"
+HOST = "192.168.88.213"
 PORT = 65432  
 
 class Client():
@@ -15,7 +15,16 @@ class Client():
         self.server.connect((HOST, PORT))
         self.server.send(f"plr_join_{self.plr_name}".encode())
         server_data = self.server.recv(1024).decode()
-        print(server_data)
+        # print(server_data)
+        # if data.startswith("plr_join"):
+        self.server.close()
+
+    def send_plr_leave(self):
+        self.server = socket.socket()
+        self.server.connect((HOST, PORT))
+        self.server.send(f"plr_leave_{self.plr_name}".encode())
+        server_data = self.server.recv(1024).decode()
+        # print(server_data)
         # if data.startswith("plr_join"):
         self.server.close()
 
